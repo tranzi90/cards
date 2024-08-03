@@ -8,10 +8,10 @@ import (
 	"time"
 )
 
-type deck []string
+type Deck []string
 
-func newDeck() deck {
-	cards := deck{}
+func NewDeck() Deck {
+	cards := Deck{}
 
 	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
 	cardValues := []string{"Ace", "Two", "Three", "Four"}
@@ -25,25 +25,25 @@ func newDeck() deck {
 
 }
 
-func (d deck) print() {
+func (d Deck) print() {
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
 }
 
-func deal(d deck, handSize int) (deck, deck) {
+func deal(d Deck, handSize int) (Deck, Deck) {
 	return d[:handSize], d[handSize:]
 }
 
-func (d deck) toString() string {
+func (d Deck) toString() string {
 	return strings.Join([]string(d), ",")
 }
 
-func (d deck) saveToFile(filename string) error {
+func (d Deck) saveToFile(filename string) error {
 	return os.WriteFile(filename, []byte(d.toString()), 0666)
 }
 
-func newDeckFromFile(filename string) deck {
+func newDeckFromFile(filename string) Deck {
 	bs, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Println("Error:", err)
@@ -51,10 +51,10 @@ func newDeckFromFile(filename string) deck {
 	}
 
 	s := strings.Split(string(bs), ",")
-	return deck(s)
+	return Deck(s)
 }
 
-func (d deck) shuffle() {
+func (d Deck) shuffle() {
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 

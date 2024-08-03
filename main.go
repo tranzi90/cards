@@ -1,7 +1,9 @@
 package main
 
+import "cards/deck"
+
 func main() {
-	cards := newDeck()
+	cards := deck.NewDeck()
 	cards.shuffle()
 	cards.print()
 }
