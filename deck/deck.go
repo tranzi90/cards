@@ -54,7 +54,7 @@ func newDeckFromFile(filename string) Deck {
 	return Deck(s)
 }
 
-func (d Deck) shuffle() {
+func (d Deck) Shuffle() {
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 
