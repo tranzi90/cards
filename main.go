@@ -5,5 +5,5 @@ import "cards/deck"
 func main() {
 	cards := deck.NewDeck()
 	cards.Shuffle()
-	cards.print()
+	cards.Print()
 }
