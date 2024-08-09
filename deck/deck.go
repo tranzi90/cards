@@ -51,7 +51,7 @@ func newDeckFromFile(filename string) Deck {
 	}
 
 	s := strings.Split(string(bs), ",")
-	return Deck(s)
+	return s
 }
 
 func (d Deck) Shuffle() {
