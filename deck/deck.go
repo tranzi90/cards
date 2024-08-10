@@ -36,7 +36,7 @@ func deal(d Deck, handSize int) (Deck, Deck) {
 }
 
 func (d Deck) toString() string {
-	return strings.Join([]string(d), ",")
+	return strings.Join(d, ",")
 }
 
 func (d Deck) saveToFile(filename string) error {
