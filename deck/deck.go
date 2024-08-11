@@ -31,9 +31,9 @@ func (d Deck) Print() {
 	}
 }
 
-func deal(d Deck, handSize int) (Deck, Deck) {
-	return d[:handSize], d[handSize:]
-}
+//func deal(d Deck, handSize int) (Deck, Deck) {
+//	return d[:handSize], d[handSize:]
+//}
 
 func (d Deck) toString() string {
 	return strings.Join(d, ",")
