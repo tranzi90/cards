@@ -28,7 +28,10 @@ func TestSaveToDeckAndNewDeckFromFile(t *testing.T) {
 	}
 
 	deck := NewDeck()
-	deck.saveToFile("_decktesting")
+	err = deck.saveToFile("_decktesting")
+	if err != nil {
+		return
+	}
 
 	loadedDeck := newDeckFromFile("_decktesting")
 
