@@ -24,7 +24,7 @@ func TestNewDeck(t *testing.T) {
 func TestSaveToDeckAndNewDeckFromFile(t *testing.T) {
 	err := os.Remove("_decktesting")
 	if err != nil {
-		return
+		panic(err)
 	}
 
 	deck := NewDeck()
